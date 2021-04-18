@@ -4,7 +4,7 @@ const dbPass = process.env.DB_PWD;
 
 function connectMongo() {
 	try {
-		var mongouri = `mongodb://localhost:27017/${dbName}:${dbPass}`; //! FOR DOCKER
+		var mongouri = `mongodb://db:27017/${dbName}:${dbPass}`; //! FOR DOCKER
 
 		mongoose.connect(
 			mongouri,

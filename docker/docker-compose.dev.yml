@@ -1,0 +1,53 @@
+version: '3.3'
+services:
+    api:
+        build:
+            context: ../api
+            dockerfile: ../docker/api.dev.Dockerfile
+        container_name: DevOps_API
+        restart: unless-stopped
+        networks:
+            - network
+        volumes:
+            - ../api:/usr/src/api
+        expose:
+            - 8000
+        ports:
+            - 8000:8000
+        env_file: ../.env
+        environment:
+            WAIT_HOSTS: db:27018,redis:6379
+            WAIT_HOSTS_TIMEOUT: 120
+    db:
+        image: mongo:latest
+        container_name: DevOps_DB
+        volumes:
+            - ./data:/data/db
+        ports:
+            - '27018:27018'
+        networks:
+            - network
+
+    redis:
+        image: redis:alpine
+        container_name: DevOps_REDIS
+        restart: unless-stopped
+        networks:
+            - network
+    client:
+        stdin_open: true
+        build:
+            context: ../client
+            dockerfile: ../docker/client.dev.Dockerfile
+        container_name: DevOps_CLIENT
+        restart: unless-stopped
+        networks:
+            - network
+        volumes:
+            - ../client:/usr/src/client
+        ports:
+            - 3000:3000
+        env_file: ../.env
+networks:
+    network:
+        driver: bridge

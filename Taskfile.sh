@@ -10,13 +10,13 @@ start() {
     cd api && npm run-script test
 }
 prod() {
-    docker-compose -f docker/docker-compose.prod.yml up -d
+    docker-compose -f docker/docker-compose.prod.yml up
 }
 mongo() {
-    docker exec -it EMR_DB mongo
+    docker exec -it DevOps_DB mongo
 }
 redis() {
-    docker exec -it EMR_REDIS redis-cli
+    docker exec -it DevOps_REDIS redis-cli
 }
 dev() {
     docker-compose -f docker/docker-compose.dev.yml up
