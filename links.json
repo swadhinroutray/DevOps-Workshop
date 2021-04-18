@@ -1,0 +1,7 @@
+{
+    "docker": "https://docs.docker.com/engine/install/ubuntu/",
+    "docker-compose": "https://docs.docker.com/compose/install/",
+    "mongo": "https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04-source",
+    "redis": "https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04",
+    "node": "https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04"
+}
