@@ -1,9 +1,6 @@
 # DevOps-Workshop
 
-## For Pm2 & Nginx deployment
+## For Docker deployments
 
--   Install MongoDB, Redis, Node and Nginx on the server
--   Build your client app on the server
--   Copy build folder to /var/www/html/build
--   Start PM2 Deployment
--   Start nginx server
+-   Install Docker and Docker Compose on your systems
+-   Change redis provider in ENV from localhost to redis
