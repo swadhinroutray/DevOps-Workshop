@@ -81,7 +81,7 @@ class App extends Component {
 				</InputFields>
 
 				<InputFields>
-					Password:
+					Name:
 					<br />
 					<input
 						type="text"

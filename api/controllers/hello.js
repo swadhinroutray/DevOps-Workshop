@@ -31,7 +31,7 @@ async function postData(req, res) {
 		return res.send({ success: true, data: 'Added User successfully' });
 		// return response.sendSuccess(res, 'recieved Data');
 	} catch (error) {
-		response.sendError(error);
+		return res.send(error);
 	}
 }
 module.exports = {
